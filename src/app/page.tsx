@@ -37,15 +37,15 @@ export default function Home() {
           >
             <option value="tldr">TL;DR</option>
             <option value="bullet">Bullet Points</option>
-            <option value="eli5">Explain Like I'm 5</option>
+            <option value="eli5">Explain Like I&apos;m 5</option>
           </select>
           <select
             value={model}
             onChange={(e) => setModel(e.target.value)}
             className="p-2 border rounded ml-2"
           >
-            <option value="mistral">Mistral</option>
             <option value="llama3">Llama3</option>
+            <option value="mistral">Mistral</option>
           </select>
         </div>
         <button
