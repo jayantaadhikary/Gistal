@@ -9,8 +9,12 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const summarize = async () => {
+    if (!input) {
+      alert("Please enter some text to summarize.");
+      return;
+    }
     setLoading(true);
-    const res = await fetch("/api/summarize", {
+    const res = await fetch("/api/summarize/ollama", {
       method: "POST",
       body: JSON.stringify({ input, style, model }),
     });
@@ -21,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="max-w-2xl mx-auto p-6 space-y-4">
-      <h1 className="text-3xl font-bold">Gistal – Local Summarizer</h1>
+      <h1 className="text-3xl font-bold">Gistal – Text Summarizer</h1>
       <textarea
         className="w-full h-40 p-4 border rounded"
         placeholder="Paste your text..."
@@ -45,12 +49,12 @@ export default function Home() {
             className="p-2 border rounded ml-2"
           >
             <option value="llama3">Llama3</option>
-            <option value="mistral">Mistral</option>
+            <option value="gemma2">Gemma2</option>
           </select>
         </div>
         <button
           onClick={summarize}
-          className="px-4 py-2 bg-blue-600 text-white rounded"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           disabled={loading}
         >
           {loading ? "Summarizing..." : "Summarize"}
@@ -61,6 +65,12 @@ export default function Home() {
         <div className="p-4 border rounded bg-gray-700 whitespace-pre-wrap">
           <strong>Summary:</strong>
           <p>{summary}</p>
+          <button
+            onClick={() => navigator.clipboard.writeText(summary)}
+            className="mt-2 text-sm text-blue-500 underline hover:text-blue-700 transition"
+          >
+            Copy Summary
+          </button>
         </div>
       )}
     </main>
