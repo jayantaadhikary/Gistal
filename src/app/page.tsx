@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Home() {
   const [input, setInput] = useState("");
   const [style, setStyle] = useState("tldr");
-  const [model, setModel] = useState("mistral");
+  const [model, setModel] = useState("llama3");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
 
