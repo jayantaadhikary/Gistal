@@ -1,0 +1,5 @@
+✔  Add login functionality
+✔  Add logout functionality
+✔ Limit Guest user summarizations 
+✔ Limit Logged in user summarizations to 5 per day @done(25-05-08 13:00)
+☐ Add Save Summary feature
