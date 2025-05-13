@@ -2,4 +2,10 @@
 ✔  Add logout functionality
 ✔ Limit Guest user summarizations 
 ✔ Limit Logged in user summarizations to 5 per day @done(25-05-08 13:00)
+☐ Add button to switch to local summarization (changes the API endpoint also removes login/logout button)
 ☐ Add Save Summary feature
+☐ View Saved Summaries
+☐ Add Delete Summary feature
+☐ Add PDF Upload Feature
+☐ Add PDF Parser to extract text from PDF and summarize it
+

@@ -87,7 +87,7 @@ export default function Home() {
         data: { session },
       } = await supabase.auth.getSession();
 
-      const res = await fetch("/api/summarize/groq", {
+      const res = await fetch("/api/summarize/ollama", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
